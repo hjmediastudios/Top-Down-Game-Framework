@@ -66,5 +66,5 @@ void GameObject::setID(int id)
 
 void GameObject::moveDirection(float angle, float speed)
 {
-    shiftPosition((speed/400)*cos(rad2deg(angle)), (speed/400)*sin(rad2deg(angle))); 
+    shiftPosition((speed)*cos(deg2rad(angle)), (speed)*-1*sin(deg2rad(angle))); 
 }

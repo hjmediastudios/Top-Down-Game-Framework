@@ -25,7 +25,6 @@ protected:
     float x;
     float y;
     int id;
-//    GameHandler *handler;
     bool solid;
     //TODO add gameController
 };
