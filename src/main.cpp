@@ -23,12 +23,16 @@ int main(int argc, char** argv)
     Unit unit2 = Unit(290.0, 395.0, 5.0, 1);
     handler.registerObject(&unit2);
     
+    Unit unit3 = Unit(500.0, 112.0, 5.0, 5);
+    handler.registerObject(&unit3);
+    
     al_create_display(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     while (true) {
         al_clear_to_color(al_color_html("112211"));
         input.poll();
         
+        handler.stepLogic_all();
         handler.render_all();
         
         al_flip_display();

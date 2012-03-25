@@ -16,11 +16,12 @@
 #include <math.h>
 
 //User includes
+#include "Utils.hpp"
 #include "Input.hpp"
 #include "GameObject.hpp"
 #include "Unit.hpp"
 #include "GameHandler.hpp"
-#include "Utils.hpp"
+
 
 //defines
 #define SCREEN_WIDTH 640

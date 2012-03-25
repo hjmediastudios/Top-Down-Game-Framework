@@ -10,12 +10,12 @@
 
 #include "main.hpp"
 
-class Unit : public GameObject 
-{
+class Unit : public GameObject {
 public:
     Unit(float x, float y, float maxSpeed, int team);
     void render();
     void stepLogic();
+
 private:
     float direction;
     float maxSpeed;

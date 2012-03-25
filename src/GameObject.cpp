@@ -1,4 +1,5 @@
 #include "../include/main.hpp"
+using namespace std;
 
 GameObject::GameObject()
 {
@@ -51,4 +52,19 @@ int GameObject::getID()
 void GameObject::setID(int id)
 {
     this->id = id;
+}
+
+//void GameObject::setHandler(GameHandler* handler)
+//{
+//    this->handler = handler;
+//}
+//
+//GameHandler* GameObject::getHandler()
+//{
+//    return this->handler;
+//}
+
+void GameObject::moveDirection(float angle, float speed)
+{
+    shiftPosition((speed/400)*cos(rad2deg(angle)), (speed/400)*sin(rad2deg(angle))); 
 }

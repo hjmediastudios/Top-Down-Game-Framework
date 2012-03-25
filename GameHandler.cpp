@@ -13,6 +13,7 @@ void GameHandler::registerObject(GameObject *object)
     
     tempListing->object = object;
     tempListing->next = listing_head;
+//    tempListing->object->setHandler(&(*this));
     
     listing_head = tempListing;
     
@@ -28,5 +29,13 @@ void GameHandler::render_all()
     ObjectListing *iterator;
     for (iterator = listing_head; iterator != NULL; iterator = iterator->next)
         iterator->object->render();
+    delete iterator;
 }
 
+void GameHandler::stepLogic_all()
+{
+    ObjectListing *iterator;
+    for (iterator = listing_head; iterator != NULL; iterator = iterator->next)
+        iterator->object->stepLogic();
+    delete iterator;
+}

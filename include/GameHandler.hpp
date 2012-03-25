@@ -23,6 +23,7 @@ public:
     void registerObject(GameObject *object);
     void registerHeadObject(GameObject *object);
     void render_all();
+    void stepLogic_all();
 private:
     ObjectListing *listing_head;
     int numObjects;
