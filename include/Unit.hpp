@@ -13,14 +13,16 @@
 class Unit : public GameObject {
 public:
     Unit(float x, float y, float maxSpeed, int team);
-    void render();
-    void stepLogic();
+    void rotate(float degrees);
+    virtual void render();
+    virtual void stepLogic();
 
-private:
+protected:
     float direction;
     float maxSpeed;
     float speed;
     float friction;
+    float maneuverability;
     int team;
     ALLEGRO_COLOR color;
 };

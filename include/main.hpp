@@ -21,12 +21,13 @@
 #include "GameObject.hpp"
 #include "Unit.hpp"
 #include "GameHandler.hpp"
+#include "Player.hpp"
 
 
 //defines
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
-#define FRICTION 0.2
+#define FRICTION 0.2 //0.2
 
 //enums
 

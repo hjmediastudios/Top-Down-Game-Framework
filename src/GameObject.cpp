@@ -54,17 +54,17 @@ void GameObject::setID(int id)
     this->id = id;
 }
 
-//void GameObject::setHandler(GameHandler* handler)
-//{
-//    this->handler = handler;
-//}
-//
-//GameHandler* GameObject::getHandler()
-//{
-//    return this->handler;
-//}
+void GameObject::setHandler(GameHandler* handler)
+{
+    this->handler = handler;
+}
+
+GameHandler* GameObject::getHandler()
+{
+    return this->handler;
+}
 
 void GameObject::moveDirection(float angle, float speed)
 {
-    shiftPosition((speed)*cos(deg2rad(angle)), (speed)*-1*sin(deg2rad(angle))); 
+    shiftPosition(speed*0.01*cos(deg2rad(angle)), speed*-0.01*sin(deg2rad(angle))); 
 }

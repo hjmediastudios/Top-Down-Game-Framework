@@ -15,8 +15,8 @@ public:
     float getY();
     int getID();
     void setID(int id);
-//    void setHandler(GameHandler *handler);
-//    GameHandler* getHandler();
+    void setHandler(GameHandler *handler);
+    GameHandler* getHandler();
     virtual void render();
     virtual void stepLogic();
     void moveDirection(float angle, float speed);
@@ -26,7 +26,7 @@ protected:
     float y;
     int id;
     bool solid;
-    //TODO add gameController
+    GameHandler *handler;
 };
 
 

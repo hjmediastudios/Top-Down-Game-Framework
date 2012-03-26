@@ -24,7 +24,10 @@ public:
     void registerHeadObject(GameObject *object);
     void render_all();
     void stepLogic_all();
+    void setInput(Input *input);
+    Input *getInput();
 private:
+    Input *input;
     ObjectListing *listing_head;
     int numObjects;
     int highestObjectID;

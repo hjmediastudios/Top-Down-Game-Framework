@@ -4,11 +4,13 @@ using namespace std;
 Unit::Unit(float x, float y, float maxSpeed, int team) : GameObject(x, y)
 {
     this->maxSpeed = maxSpeed;
-    speed = 1;
+    speed = 0.0;
     friction = FRICTION;
     this->team = team;
-    direction = 30.0;
+    direction = 0.0;
+    rotate(45);
     color = al_color_hsv(255.0 / (team + 1.0), 255.0, 255.0);
+    maneuverability = 0.9;
 }
 
 void Unit::render()
@@ -21,8 +23,24 @@ void Unit::render()
 void Unit::stepLogic()
 {
     //TODO change
-    direction += 0.01;
-    moveDirection(direction, 0.02);
+    moveDirection(direction, speed);
+}
+
+void Unit::rotate(float degrees)
+{
+    if (degrees > 0.0)
+    {
+        if (direction < (360.0) - degrees)
+            direction += degrees;
+        else
+            direction = (degrees + direction) - 360;
+    } else
+    {
+        if (direction > 0.0 + degrees)
+            direction += degrees;
+        else
+            direction = (direction + degrees) + 360;
+    }
 }
 
 
