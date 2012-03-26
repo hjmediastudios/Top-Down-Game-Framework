@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Unit.o \
 	${OBJECTDIR}/src/Player.o \
 	${OBJECTDIR}/src/GameObject.o \
+	${OBJECTDIR}/src/Bullet.o \
 	${OBJECTDIR}/src/GameHandler.o \
 	${OBJECTDIR}/src/Utils.o
 
@@ -91,6 +92,11 @@ ${OBJECTDIR}/src/GameObject.o: src/GameObject.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GameObject.o src/GameObject.cpp
+
+${OBJECTDIR}/src/Bullet.o: src/Bullet.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Bullet.o src/Bullet.cpp
 
 ${OBJECTDIR}/src/GameHandler.o: src/GameHandler.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

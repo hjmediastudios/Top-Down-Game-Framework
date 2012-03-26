@@ -68,3 +68,8 @@ void GameObject::moveDirection(float angle, float speed)
 {
     shiftPosition(speed*0.01*cos(deg2rad(angle)), speed*-0.01*sin(deg2rad(angle))); 
 }
+
+bool GameObject::isInBounds(float x1, float y1, float x2, float y2)
+{
+    return (x >= x1 && x <= x2 && y >= y1 && y <= y2);
+}

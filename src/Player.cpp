@@ -14,7 +14,7 @@ void Player::stepLogic()
 {
     float accel = handler->getInput()->get_ud();
 
-    speed = accel + (speed*(-1*(1-maneuverability)*(accel < 0.0)));
+    speed = accel + (speed*(-1*(accel < 0.0)));
 
     if (fabs(speed) >= maxSpeed)
     {

@@ -14,6 +14,8 @@
 #include <allegro5/allegro_color.h>
 #include <allegro5/allegro_primitives.h>
 #include <math.h>
+//#include <GL/glut.h>
+//#include <SDL/SDL.h>
 
 //User includes
 #include "Utils.hpp"
@@ -22,6 +24,7 @@
 #include "Unit.hpp"
 #include "GameHandler.hpp"
 #include "Player.hpp"
+#include "Bullet.hpp"
 
 
 //defines

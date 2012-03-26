@@ -1,3 +1,5 @@
+#include <GL/gl_mangle.h>
+
 #include "../include/main.hpp"
 using namespace std;
 
@@ -5,7 +7,6 @@ void init()
 {
     al_init();
     al_init_primitives_addon();
-
     al_install_keyboard();
 }
 
@@ -26,12 +27,16 @@ int main(int argc, char** argv)
 
     Unit unit3 = Unit(500.0, 112.0, 5.0, 5);
     handler.registerObject(&unit3);
+    
+    Bullet bullet = Bullet(42.0, 42.0, -45.0, 2.0);
+    handler.registerObject(&bullet);
 
     al_create_display(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     while (true)
     {
         al_clear_to_color(al_color_html("112211"));
+
         input.poll();
 
         handler.stepLogic_all();

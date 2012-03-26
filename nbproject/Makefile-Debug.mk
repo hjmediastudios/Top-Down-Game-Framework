@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Unit.o \
 	${OBJECTDIR}/src/Player.o \
 	${OBJECTDIR}/src/GameObject.o \
+	${OBJECTDIR}/src/Bullet.o \
 	${OBJECTDIR}/src/GameHandler.o \
 	${OBJECTDIR}/src/Utils.o
 
@@ -57,7 +58,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lallegro -lallegro_color -lallegro_primitives -lallegro -lallegro_main
+LDLIBSOPTIONS=-lallegro -lallegro_color -lallegro_primitives -lallegro -lallegro_main -lSDL
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -91,6 +92,11 @@ ${OBJECTDIR}/src/GameObject.o: src/GameObject.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GameObject.o src/GameObject.cpp
+
+${OBJECTDIR}/src/Bullet.o: src/Bullet.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Bullet.o src/Bullet.cpp
 
 ${OBJECTDIR}/src/GameHandler.o: src/GameHandler.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

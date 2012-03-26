@@ -20,6 +20,7 @@ public:
     virtual void render();
     virtual void stepLogic();
     void moveDirection(float angle, float speed);
+    bool isInBounds(float x1, float y1, float x2, float y2);
 
 protected:
     float x;
