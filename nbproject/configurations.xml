@@ -19,7 +19,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>GameHandler.cpp</itemPath>
+      <itemPath>src/GameHandler.cpp</itemPath>
       <itemPath>src/GameObject.cpp</itemPath>
       <itemPath>src/Input.cpp</itemPath>
       <itemPath>src/Player.cpp</itemPath>

@@ -1,4 +1,4 @@
-#include "include/main.hpp"
+#include "../include/main.hpp"
 
 GameHandler::GameHandler()
 {

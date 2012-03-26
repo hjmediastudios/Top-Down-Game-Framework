@@ -37,9 +37,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/main.o \
 	${OBJECTDIR}/src/Input.o \
 	${OBJECTDIR}/src/Unit.o \
-	${OBJECTDIR}/GameHandler.o \
 	${OBJECTDIR}/src/Player.o \
 	${OBJECTDIR}/src/GameObject.o \
+	${OBJECTDIR}/src/GameHandler.o \
 	${OBJECTDIR}/src/Utils.o
 
 
@@ -82,11 +82,6 @@ ${OBJECTDIR}/src/Unit.o: src/Unit.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Unit.o src/Unit.cpp
 
-${OBJECTDIR}/GameHandler.o: GameHandler.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameHandler.o GameHandler.cpp
-
 ${OBJECTDIR}/src/Player.o: src/Player.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
@@ -96,6 +91,11 @@ ${OBJECTDIR}/src/GameObject.o: src/GameObject.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GameObject.o src/GameObject.cpp
+
+${OBJECTDIR}/src/GameHandler.o: src/GameHandler.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/GameHandler.o src/GameHandler.cpp
 
 ${OBJECTDIR}/src/Utils.o: src/Utils.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
