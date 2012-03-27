@@ -10,9 +10,14 @@
 
 #include "main.hpp"
 
+class GameHandler;
+
 struct ObjectListing
 {
     GameObject *object;
+    GameHandler *handler;
+    
+    ObjectListing *previous;
     ObjectListing *next;
 };
 
@@ -21,7 +26,7 @@ class GameHandler
 public:
     GameHandler();
     void registerObject(GameObject *object);
-    void registerHeadObject(GameObject *object);
+    void deregisterObject(GameObject *object, bool deleteObj);
     void render_all();
     void stepLogic_all();
     void setInput(Input *input);

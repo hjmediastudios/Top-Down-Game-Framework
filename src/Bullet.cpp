@@ -13,8 +13,13 @@ void Bullet::render()
 
 void Bullet::stepLogic()
 {
-//    if (isInBounds(0.0, 0.0, SCREEN_WIDTH, SCREEN_HEIGHT))
+    if (isInBounds(0.0, 0.0, (float) SCREEN_WIDTH, (float) SCREEN_HEIGHT))
     {
         moveDirection(direction, speed);
+    }
+    else
+    {
+        listing->handler->deregisterObject(this, true);
+//        listing->handler
     }
 }

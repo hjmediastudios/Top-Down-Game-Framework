@@ -54,14 +54,14 @@ void GameObject::setID(int id)
     this->id = id;
 }
 
-void GameObject::setHandler(GameHandler* handler)
+void GameObject::setListing(ObjectListing* listing)
 {
-    this->handler = handler;
+    this->listing = listing;
 }
 
-GameHandler* GameObject::getHandler()
+ObjectListing* GameObject::getListing()
 {
-    return this->handler;
+    return this->listing;
 }
 
 void GameObject::moveDirection(float angle, float speed)

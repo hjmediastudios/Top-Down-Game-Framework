@@ -14,11 +14,12 @@ class Player : public Unit
 {
     
 public:
-    Player(float x, float y, float maxSpeed);
+    Player(float x, float y, float maxSpeed, Input* controls);
     void render();
     void stepLogic();
 private:
-    
+    int shotTimer;
+    Input *controls;
     
 };
 

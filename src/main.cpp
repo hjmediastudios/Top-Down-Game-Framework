@@ -19,17 +19,17 @@ int main(int argc, char** argv)
     GameHandler handler = GameHandler();
     handler.setInput(&input);
 
-    Player unit = Player(25.0, 150.0, 2.0);
-    handler.registerObject(&unit);
+    Player* unit = new Player(25.0, 150.0, 2.0, &input);
+    handler.registerObject(unit);
 
-    Unit unit2 = Unit(290.0, 395.0, 5.0, 1);
-    handler.registerObject(&unit2);
-
-    Unit unit3 = Unit(500.0, 112.0, 5.0, 5);
-    handler.registerObject(&unit3);
+    Unit* unit2 = new Unit(290.0, 395.0, 5.0, 1);
+    handler.registerObject(unit2);
     
-    Bullet bullet = Bullet(42.0, 42.0, -45.0, 2.0);
-    handler.registerObject(&bullet);
+    Bullet* bullet = new Bullet(42.0, 42.0, -45.0, 2.0);
+    handler.registerObject(bullet);
+    
+    Unit* unit3 = new Unit(500.0, 112.0, 5.0, 5);
+    handler.registerObject(unit3);
 
     al_create_display(SCREEN_WIDTH, SCREEN_HEIGHT);
 
@@ -45,8 +45,10 @@ int main(int argc, char** argv)
         al_flip_display();
 
         if (input.get_esc())
+        {
             break;
+        }
     }
-    return 0;
+    return 22;
 }
 

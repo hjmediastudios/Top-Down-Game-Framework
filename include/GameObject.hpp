@@ -3,7 +3,7 @@
 
 #include "main.hpp"
 
-class GameHandler;
+struct ObjectListing;
 
 class GameObject {
 public:
@@ -15,8 +15,8 @@ public:
     float getY();
     int getID();
     void setID(int id);
-    void setHandler(GameHandler *handler);
-    GameHandler* getHandler();
+    void setListing(ObjectListing *listing);
+    ObjectListing* getListing();
     virtual void render();
     virtual void stepLogic();
     void moveDirection(float angle, float speed);
@@ -27,7 +27,7 @@ protected:
     float y;
     int id;
     bool solid;
-    GameHandler *handler;
+    ObjectListing *listing;
 };
 
 
