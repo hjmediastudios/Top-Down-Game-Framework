@@ -9,6 +9,7 @@ class GameObject {
 public:
     GameObject();
     GameObject(float x, float y);
+    virtual ~GameObject();
     void setPosition(float x, float y);
     void shiftPosition(float xShift, float yShift);
     float getX();

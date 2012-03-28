@@ -78,6 +78,7 @@ void GameHandler::deregisterObject(GameObject *object)
     if (del->previous != NULL)
         del->previous->next = del->next;
 
+    numObjects--;
     /* Finally, free the memory occupied by del*/
     free(del);
     return;
