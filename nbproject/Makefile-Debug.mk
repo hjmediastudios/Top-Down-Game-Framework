@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/main.o \
 	${OBJECTDIR}/src/Input.o \
 	${OBJECTDIR}/src/Unit.o \
+	${OBJECTDIR}/src/Transform.o \
 	${OBJECTDIR}/src/Player.o \
 	${OBJECTDIR}/src/GameObject.o \
 	${OBJECTDIR}/src/Bullet.o \
@@ -88,6 +89,11 @@ ${OBJECTDIR}/src/Unit.o: src/Unit.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Unit.o src/Unit.cpp
+
+${OBJECTDIR}/src/Transform.o: src/Transform.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Transform.o src/Transform.cpp
 
 ${OBJECTDIR}/src/Player.o: src/Player.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

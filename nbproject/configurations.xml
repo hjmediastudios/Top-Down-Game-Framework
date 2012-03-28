@@ -9,6 +9,7 @@
       <itemPath>include/GameObject.hpp</itemPath>
       <itemPath>include/Input.hpp</itemPath>
       <itemPath>include/Player.hpp</itemPath>
+      <itemPath>include/Transform.hpp</itemPath>
       <itemPath>include/Unit.hpp</itemPath>
       <itemPath>include/Utils.hpp</itemPath>
       <itemPath>include/Vector.hpp</itemPath>
@@ -26,6 +27,7 @@
       <itemPath>src/GameObject.cpp</itemPath>
       <itemPath>src/Input.cpp</itemPath>
       <itemPath>src/Player.cpp</itemPath>
+      <itemPath>src/Transform.cpp</itemPath>
       <itemPath>src/Unit.cpp</itemPath>
       <itemPath>src/Utils.cpp</itemPath>
       <itemPath>src/Vector.cpp</itemPath>

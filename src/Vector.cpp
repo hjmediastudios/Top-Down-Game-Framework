@@ -12,22 +12,22 @@ Vector::Vector(Vector* vector)
     y = vector->y;
 }
 
-Vector::operator +(Vector vector2)
+Vector Vector::operator +(Vector vector2)
 {
     return new Vector(x+vector2.x, y+vector2.y);
 }
 
-Vector::operator -(Vector vector2)
+Vector Vector::operator -(Vector vector2)
 {
     return new Vector(x - vector2.x, y - vector2.y);
 }
 
-Vector::operator *(float scale)
+Vector Vector::operator *(float scale)
 {
     return new Vector(x * scale, y * scale);
 }
 
-Vector::operator /(float scale)
+Vector Vector::operator /(float scale)
 {
     return new Vector(x / scale, y / scale);
 }
