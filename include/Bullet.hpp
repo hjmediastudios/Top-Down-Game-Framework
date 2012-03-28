@@ -14,7 +14,7 @@ class Bullet : public GameObject
 {
 public:
     Bullet(float x, float y, float direction, float speed);
-//    ~Bullet();
+    ~Bullet();
     void render();
     void stepLogic();
 private:

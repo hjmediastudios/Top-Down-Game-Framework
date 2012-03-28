@@ -3,7 +3,7 @@
 Input::Input()
 {
     //Create memory
-    memset(&keyboardState, 0, sizeof(ALLEGRO_KEYBOARD_STATE));
+    memset(&keyboardState, 0, sizeof (ALLEGRO_KEYBOARD_STATE));
 }
 
 void Input::poll()
@@ -11,37 +11,48 @@ void Input::poll()
     al_get_keyboard_state(&keyboardState);
 }
 
-double Input::get_lr()
+float Input::get_lr()
 {
-    double returnValue = 0.0;
-    if (al_key_down(&keyboardState, ALLEGRO_KEY_LEFT))
-        returnValue -= 1.0;
-    if (al_key_down(&keyboardState, ALLEGRO_KEY_RIGHT))
-        returnValue += 1.0;
-    
-    return returnValue;
+    if (&keyboardState != NULL)
+    {
+        if (al_key_down(&keyboardState, ALLEGRO_KEY_LEFT))
+            return -1.0;
+        else if (al_key_down(&keyboardState, ALLEGRO_KEY_RIGHT))
+            return 1.0;
+        else
+            return 0.0;
+    }
+    else
+    {
+        std::cerr << "Couldn't read keyboard.\n";
+        return 0.0;
+    }
 }
 
-double Input::get_ud()
+float Input::get_ud()
 {
-    double returnValue = 0.0;
-    if (al_key_down(&keyboardState, ALLEGRO_KEY_DOWN))
-        returnValue -= 1.0;
-    if (al_key_down(&keyboardState, ALLEGRO_KEY_UP))
-        returnValue += 1.0;
-    
-    return returnValue;
+    if (&keyboardState != NULL)
+    {
+        if (al_key_down(&keyboardState, ALLEGRO_KEY_DOWN))
+            return -1.0;
+        else if (al_key_down(&keyboardState, ALLEGRO_KEY_UP))
+            return 1.0;
+        else
+            return 0.0;
+    }
+    else
+    {
+        std::cerr << "Couldn't read keyboard.\n";
+        return 0.0;
+    }
 }
 
-double Input::get_ad()
+float Input::get_ad()
 {
-    double returnValue = 0.0;
     if (al_key_down(&keyboardState, ALLEGRO_KEY_A))
-        returnValue -= 1.0;
+        return -1.0;
     if (al_key_down(&keyboardState, ALLEGRO_KEY_D))
-        returnValue += 1.0;
-    
-    return returnValue;
+        return 1.0;
 }
 
 bool Input::get_esc()

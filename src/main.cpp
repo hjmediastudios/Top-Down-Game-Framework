@@ -24,10 +24,7 @@ int main(int argc, char** argv)
 
     Unit* unit2 = new Unit(290.0, 395.0, 5.0, 1);
     handler.registerObject(unit2);
-    
-    Bullet* bullet = new Bullet(42.0, 42.0, -45.0, 2.0);
-    handler.registerObject(bullet);
-    
+
     Unit* unit3 = new Unit(500.0, 112.0, 5.0, 5);
     handler.registerObject(unit3);
 

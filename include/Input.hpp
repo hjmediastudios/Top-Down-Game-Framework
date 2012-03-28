@@ -8,9 +8,9 @@ class Input
 public:
     Input();
     void poll();
-    double get_lr();
-    double get_ud();
-    double get_ad();
+    float get_lr();
+    float get_ud();
+    float get_ad();
     bool get_space();
     bool get_esc();
     

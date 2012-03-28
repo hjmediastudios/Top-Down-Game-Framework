@@ -19,7 +19,7 @@ void GameHandler::registerObject(GameObject *object)
 
     if (listing_head != NULL)
         listing_head->previous = tempListing;
-    
+
     listing_head = tempListing;
 
     object->setID(highestObjectID);
@@ -59,40 +59,27 @@ Input *GameHandler::getInput()
     return input;
 }
 
-void GameHandler::deregisterObject(GameObject *object, bool deleteObj)
+void GameHandler::deregisterObject(GameObject *object)
 {
-    ObjectListing* tempListing = object->getListing();
+    ObjectListing* del = object->getListing();
+    /* base case */
+    if (listing_head == NULL || del == NULL)
+        return;
 
-    if (tempListing->next == NULL && tempListing->previous == NULL)
-    {
-        std::cout << "Only node!\n";
-        listing_head = NULL;
-    }
-    else if (tempListing->previous == NULL) //first node
-    {
-        //Listing is the first listing
-        if (tempListing->next != NULL)
-            listing_head = tempListing->next;
-        else
-            listing_head = NULL;
-    }
-    else if (tempListing->next == NULL)
-    {
-        //Listing is the last listing
-        if (tempListing->previous != NULL)
-            tempListing->previous->next = NULL;
-    }
-    else
-    {
-        //Listing is in the middle
-        tempListing->previous->next = tempListing->next;
-        tempListing->next->previous = tempListing->previous;
-    }
+    /* If node to be deleted is head node */
+    if (listing_head == del)
+        listing_head = del->next;
 
-    if (deleteObj)
-    {
-        delete object;
-    }
+    /* Change next only if node to be deleted is NOT the last node */
+    if (del->next != NULL)
+        del->next->previous = del->previous;
 
-//    std::cout << "deleted object: " << tempListing->object->getID() << "\n";
+    /* Change prev only if node to be deleted is NOT the first node */
+    if (del->previous != NULL)
+        del->previous->next = del->next;
+
+    /* Finally, free the memory occupied by del*/
+    free(del);
+    return;
 }
+

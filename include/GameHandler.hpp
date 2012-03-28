@@ -26,7 +26,7 @@ class GameHandler
 public:
     GameHandler();
     void registerObject(GameObject *object);
-    void deregisterObject(GameObject *object, bool deleteObj);
+    void deregisterObject(GameObject *object);
     void render_all();
     void stepLogic_all();
     void setInput(Input *input);

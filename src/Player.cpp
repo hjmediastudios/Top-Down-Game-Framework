@@ -11,12 +11,15 @@ void Player::render()
     Unit::render();
 }
 //TODO git me!
+
 void Player::stepLogic()
 {
+    rotate(listing->handler->getInput()->get_lr()*-0.025);
+
     //Movement code
     float accel = controls->get_ud();
 
-    speed = accel + (speed*(-1*(accel < 0.0)));
+    speed = accel + (speed * (-1 * (accel < 0.0)));
 
     if (fabs(speed) >= maxSpeed)
     {
@@ -25,12 +28,12 @@ void Player::stepLogic()
         else
             speed = maxSpeed;
     }
-    
+
     if (speed < 0.0)
-        speed += (friction*speed*-1);
+        speed += (friction * speed*-1);
     else
-        speed -= (friction*speed);
-    
+        speed -= (friction * speed);
+
     //Firing code
     if (listing->handler->getInput()->get_space() && shotTimer == 0)
     {
@@ -38,12 +41,11 @@ void Player::stepLogic()
         listing->handler->registerObject(bullet);
         shotTimer = 200;
     }
-    
+
     //Count down shot timer
     if (shotTimer > 0)
         shotTimer--;
-    
-    rotate(listing->handler->getInput()->get_lr()*-0.025);
+
     moveDirection(direction, speed);
     Unit::stepLogic();
 }

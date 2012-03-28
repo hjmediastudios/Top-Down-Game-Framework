@@ -19,7 +19,12 @@ void Bullet::stepLogic()
     }
     else
     {
-        listing->handler->deregisterObject(this, true);
-//        listing->handler
+        listing->handler->deregisterObject(this);
+        delete this;
     }
+}
+
+Bullet::~Bullet()
+{
+
 }
