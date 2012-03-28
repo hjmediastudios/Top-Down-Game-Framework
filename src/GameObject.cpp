@@ -14,7 +14,7 @@ GameObject::GameObject(float x, float y)
 
 GameObject::~GameObject()
 {
-    std::cout << "Deleted object #" <<  id << endl;
+//    std::cout << "Deleted object #" <<  id << endl;
 }
 
 float GameObject::getX()

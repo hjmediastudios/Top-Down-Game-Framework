@@ -14,7 +14,10 @@ void Player::render()
 
 void Player::stepLogic()
 {
-    rotate(listing->handler->getInput()->get_lr()*-0.025);
+    if (listing->handler->getInput()->get_lr() > 0.0)
+        rotate(-0.025);
+    else if (listing->handler->getInput()->get_lr() < 0.0)
+        rotate(0.025);
 
     //Movement code
     float accel = controls->get_ud();
@@ -34,6 +37,8 @@ void Player::stepLogic()
     else
         speed -= (friction * speed);
 
+    moveDirection(direction, speed);
+
     //Firing code
     if (listing->handler->getInput()->get_space() && shotTimer == 0)
     {
@@ -46,6 +51,5 @@ void Player::stepLogic()
     if (shotTimer > 0)
         shotTimer--;
 
-    moveDirection(direction, speed);
     Unit::stepLogic();
 }

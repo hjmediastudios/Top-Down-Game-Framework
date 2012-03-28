@@ -19,6 +19,7 @@
 
 //User includes
 #include "Utils.hpp"
+#include "Vector.hpp"
 #include "Input.hpp"
 #include "GameObject.hpp"
 #include "Unit.hpp"

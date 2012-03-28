@@ -11,6 +11,7 @@
       <itemPath>include/Player.hpp</itemPath>
       <itemPath>include/Unit.hpp</itemPath>
       <itemPath>include/Utils.hpp</itemPath>
+      <itemPath>include/Vector.hpp</itemPath>
       <itemPath>include/main.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -27,6 +28,7 @@
       <itemPath>src/Player.cpp</itemPath>
       <itemPath>src/Unit.cpp</itemPath>
       <itemPath>src/Utils.cpp</itemPath>
+      <itemPath>src/Vector.cpp</itemPath>
       <itemPath>src/main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"

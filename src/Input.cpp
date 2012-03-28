@@ -13,38 +13,26 @@ void Input::poll()
 
 float Input::get_lr()
 {
-    if (&keyboardState != NULL)
-    {
-        if (al_key_down(&keyboardState, ALLEGRO_KEY_LEFT))
-            return -1.0;
-        else if (al_key_down(&keyboardState, ALLEGRO_KEY_RIGHT))
-            return 1.0;
-        else
-            return 0.0;
-    }
+    float rValue = 0.0;
+    if (al_key_down(&keyboardState, ALLEGRO_KEY_LEFT) && !al_key_down(&keyboardState, ALLEGRO_KEY_RIGHT))
+        rValue = -1.0;
+    else if (al_key_down(&keyboardState, ALLEGRO_KEY_RIGHT) && !al_key_down(&keyboardState, ALLEGRO_KEY_LEFT))
+        rValue = 1.0;
     else
-    {
-        std::cerr << "Couldn't read keyboard.\n";
-        return 0.0;
-    }
+        rValue =  0.0;
+    std::cout << "Input state: " << rValue << std::endl;
+    return rValue;
 }
 
 float Input::get_ud()
 {
-    if (&keyboardState != NULL)
-    {
-        if (al_key_down(&keyboardState, ALLEGRO_KEY_DOWN))
-            return -1.0;
-        else if (al_key_down(&keyboardState, ALLEGRO_KEY_UP))
-            return 1.0;
-        else
-            return 0.0;
-    }
-    else
-    {
-        std::cerr << "Couldn't read keyboard.\n";
-        return 0.0;
-    }
+    float uValue = 0.0;
+    if (al_key_down(&keyboardState, ALLEGRO_KEY_DOWN))
+        uValue -= 1.0;
+    if (al_key_down(&keyboardState, ALLEGRO_KEY_UP))
+        uValue += 1.0;
+
+    return uValue;
 }
 
 float Input::get_ad()
